@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'chartkick'
 gem 'highcharts-rails', '~> 3.0.0'
-gem 'pg'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'webpacker'

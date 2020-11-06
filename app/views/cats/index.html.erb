@@ -22,7 +22,7 @@
 
   <tbody>
     <% @cats.each do |cat| %>
-      <tr>
+      <tr id='cat-<%=cat.id%>'>
       <%unless cat.cats.empty?%>
         <td><%= cat.name %></td>
         <td><%= link_to 'Show', cat %></td>

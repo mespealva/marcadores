@@ -17,6 +17,13 @@
   </div>
 
   <div class="field">
+    <%= form.label :cat %>
+    <%= form.select(:cat_id, options_from_collection_for_select(@cats, :id, :name))%>
+    <%= link_to 'crear nuevo tipo', cats_path%>
+  </div>
+
+
+  <div class="field">
     <%= form.label :tipo %>
     <%= form.select(:type_id, options_from_collection_for_select(@types, :id, :name))%>
     <%= link_to 'crear nuevo tipo', types_path%>

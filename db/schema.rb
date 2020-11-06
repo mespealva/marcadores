@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_11_03_205148) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cats", force: :cascade do |t|
     t.string "name"
-    t.integer "cat_id"
+    t.bigint "cat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cat_id"], name: "index_cats_on_cat_id"
@@ -28,12 +31,15 @@ ActiveRecord::Schema.define(version: 2020_11_03_205148) do
 
   create_table "webmarks", force: :cascade do |t|
     t.string "url"
-    t.integer "cat_id"
-    t.integer "type_id"
+    t.bigint "cat_id"
+    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cat_id"], name: "index_webmarks_on_cat_id"
     t.index ["type_id"], name: "index_webmarks_on_type_id"
   end
 
+  add_foreign_key "cats", "cats"
+  add_foreign_key "webmarks", "cats"
+  add_foreign_key "webmarks", "types"
 end

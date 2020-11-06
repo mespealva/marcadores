@@ -4,12 +4,9 @@
             <li id='cat-<%=ca.id%>'>
                 <%= ca.url  %>
                 <%= ca.type.name %>
-                
-                <%= link_to 'Edit', edit_webmark_path(ca), remote: true %>
-                <%= link_to 'Destroy', ca, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
-                    </li>    
+            </li>    
         <%end%>
     <%end%>
 </ol>
-<%= link_to 'Nuevo', new_webmark_path, remote: true %>
+<%= link_to 'Nuevo', webmarks_path %>
 <div id="nuevo"></div>
