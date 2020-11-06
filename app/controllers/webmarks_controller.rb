@@ -8,26 +8,6 @@ class WebmarksController < ApplicationController
     @types = Type.all
   end
   
-  def getWebmarksBytype
-    current_category = Category.where(name: params[:category]).first
-
-    json = { "bookmarks" => []}
-
-    cat_parent = { current_category.name => []}
-    json["bookmarks"].push(cat_parent)
-
-    if current_category.bookmarks.count > 0 
-      json["bookmarks"][0][current_category.name].push(current_category.bookmarks.pluck(:bookmark_url))
-    end 
-
-    current_category.children.each do |child|
-      arr_bookmarks = child.bookmarks.pluck(:bookmark_url)
-      json_bookmarks = {child.name => arr_bookmarks}
-      json["bookmarks"][0][current_category.name].push(json_bookmarks)
-    end 
-
-    render json: json 
-  end
   def show
   end
 

@@ -11,6 +11,7 @@ class CatsController < ApplicationController
   end
 
   def show
+    @webmark = Webmark.new
   end
 
   def create

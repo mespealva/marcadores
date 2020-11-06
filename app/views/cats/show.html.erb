@@ -1,0 +1,15 @@
+<ol>
+    <%unless @cat.webmarks.empty? %>
+        <%@cat.webmarks.each do |ca|%>
+            <li id='cat-<%=ca.id%>'>
+                <%= ca.url  %>
+                <%= ca.type.name %>
+                
+                <%= link_to 'Edit', edit_webmark_path(ca), remote: true %>
+                <%= link_to 'Destroy', ca, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+                    </li>    
+        <%end%>
+    <%end%>
+</ol>
+<%= link_to 'Nuevo', new_webmark_path, remote: true %>
+<div id="nuevo"></div>
