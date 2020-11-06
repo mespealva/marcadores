@@ -1,0 +1,6 @@
+<li id='tp-<%=type.id%>'>
+    <%= type.name %>
+    <%= link_to 'Show', type, remote: true %>
+    <%= link_to 'Edit', edit_type_path(type), remote: true %>
+    <%= link_to 'Destroy', type, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+</li>

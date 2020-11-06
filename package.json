@@ -1,0 +1,9 @@
+{
+  "name": "marcadores",
+  "private": true,
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "highcharts": "^8.2.2",
+    "jquery": "^3.5.1"
+  }
+}

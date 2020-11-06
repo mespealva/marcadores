@@ -1,0 +1,22 @@
+
+<h1>Webmarks</h1>
+<%= render 'form', webmark: @webmark %>
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Cat</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <ul>
+    <%= render @webmarks %>
+  </ul>
+    
+  </tbody>
+</table>
+
+<br>

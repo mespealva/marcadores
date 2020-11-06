@@ -1,0 +1,24 @@
+<%if cat.cat_id.nil?%>
+    <li id='cat-<%=cat.id%>'>
+        <%= cat.name %>
+        <%= link_to 'Show', cat, remote: true %>
+        <%= link_to 'Edit', edit_cat_path(cat), remote: true %>
+        <%= link_to 'Destroy', cat, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+        <ol>
+            <%unless cat.webmarks.empty? %>
+                <%cat.webmarks.each do |ca|%>
+                    <li id='cat-<%=ca.id%>'>
+                        <%= ca.url  %>
+                        <%= ca.type.name %>
+                        <%= link_to 'Show', ca, remote: true %>
+                        <%= link_to 'Edit', edit_webmark_path(ca), remote: true %>
+                        <%= link_to 'Destroy', ca, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+                    </li>    
+                <%end%>
+            <%end%>
+        </ol>
+        <ul id="cats">
+            
+        </ul>        
+    </li>
+<%end%>
